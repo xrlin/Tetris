@@ -1,0 +1,4 @@
+图片操作：
+Image img = new ImgIcon("path").getImage();
+img.getWidth(null)
+img.getHeight(null)

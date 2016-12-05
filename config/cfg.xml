@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<game>
+	<frame title="Java俄罗斯方块" width="1120" height="700" padding="7"  windowUp="7" borderSize="7">
+		<layer className="ui.LayerBackground" x="0" y="0" width="1120" height="700"/>
+		<layer className="ui.LayerDataBase" x="40" y="10" width="320" height="300"/>
+		<layer className="ui.LayerDisk" x="40" y="350" width="320" height="300"/>
+		<layer className="ui.LayerGame" x="400" y="10" width="320" height="640"/>
+		<layer className="ui.LayerButton" x="760" y="10" width="320" height="100"/>
+		<layer className="ui.LayerNextDiamond" x="760" y="150" width="155" height="134"/>
+		<layer className="ui.LayerLevel" x="928" y="150" width="155" height="134"/>
+		<layer className="ui.LayerPoint" x="760" y="324" width="320" height="176"/>
+		<layer className="ui.LayerAbout" x="760" y="536" width="320" height="114"/>
+		<button x="810" y="40" width="80" height="50"/>
+		<button x="960" y="40" width="80" height="50"/>
+	</frame>
+	<system minX="0" maxX="9" minY="0" maxY="19" actSize="32">
+		<rect rotate="true">
+			<point x="4" y="0"/><point x="3" y="0"/><point x="5" y="0"/><point x="6" y="0"/>
+		</rect>
+		<rect rotate="true">
+			<point x="4" y="0"/><point x="3" y="0"/><point x="5" y="0"/><point x="4" y="1"/>
+		</rect>
+		<rect rotate="true">
+			<point x="4" y="0"/><point x="3" y="0"/><point x="5" y="0"/><point x="3" y="1"/>
+		</rect>
+		<rect rotate="true">
+			<point x="4" y="0"/><point x="5" y="0"/><point x="3" y="1"/><point x="4" y="1"/>
+		</rect>
+		<rect rotate="false">
+			<point x="4" y="0"/><point x="5" y="0"/><point x="4" y="1"/><point x="5" y="1"/>
+		</rect>
+		<rect rotate="true">
+			<point x="4" y="0"/><point x="3" y="0"/><point x="5" y="0"/><point x="5" y="1"/>
+		</rect>
+		<rect rotate="true">
+			<point x="4" y="0"/><point x="3" y="0"/><point x="4" y="1"/><point x="5" y="1"/>
+		</rect>
+	</system>
+	<data maxRow="5">
+		<dataA dbDriver="org.mariadb.jdbc.Driver" dbUrl="jdbc:mysql://localhost:3306/player" 
+		user="user1" passwd="123456" sqlDesc="select uname, score from player order by score desc limit 5" sqlInsert="insert into player(uname,score) values (?,?)" />
+		<dataB destDir="save/diskRecord.data"/>
+	</data>	
+	
+</game>
